@@ -11,94 +11,94 @@ const useStore = create(set => ({
 }))
 
 const RotatingCube = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Box ref={mesh}>
+    <Box ref={mesh} args={[2, 2, 2]}>
       <meshStandardMaterial color="orange" />
     </Box>
-  )
-}
+  );
+};
 
 const RotatingSphere = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Sphere ref={mesh}>
+    <Sphere ref={mesh} args={[1.5, 32, 32]}>
       <meshStandardMaterial color="green" />
     </Sphere>
-  )
-}
+  );
+};
 
 const RotatingPyramid = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Cone ref={mesh} args={[1, 1, 4]}>
+    <Cone ref={mesh} args={[1.5, 3, 4]}>
       <meshStandardMaterial color="red" />
     </Cone>
-  )
-}
+  );
+};
 
 const RotatingCuboid = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Box ref={mesh} args={[1, 2, 3]}>
+    <Box ref={mesh} args={[2, 4, 6]}>
       <meshStandardMaterial color="yellow" />
     </Box>
-  )
-}
+  );
+};
 
 const RotatingCylinder = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Cylinder ref={mesh}>
+    <Cylinder ref={mesh} args={[1.5, 1.5, 3, 32]}>
       <meshStandardMaterial color="purple" />
     </Cylinder>
-  )
-}
+  );
+};
 
 const RotatingCone = () => {
-  const mesh = React.useRef()
+  const mesh = React.useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x += 0.01
-    mesh.current.rotation.y += 0.01
-  })
+    mesh.current.rotation.x += 0.01;
+    mesh.current.rotation.y += 0.01;
+  });
 
   return (
-    <Cone ref={mesh}>
+    <Cone ref={mesh} args={[1.5, 3, 32]}>
       <meshStandardMaterial color="grey" />
     </Cone>
-  )
-}
+  );
+};
 
 // Define the RotatingPrism component using low-level APIs.
 const RotatingPrism = () => {
@@ -108,7 +108,6 @@ const RotatingPrism = () => {
     ref.current.rotation.y += 0.01;
   });
 
-  // Flatten your vertices and indices into a single array
   const vertices = [
     -1, -1, -1,   1, -1, -1,   0,  1, -1,  // Bottom (base)
     -1, -1, 1,    1, -1, 1,    0,  1, 1   // Top
@@ -127,19 +126,18 @@ const RotatingPrism = () => {
 
   return (
     <mesh ref={ref}>
-      <polyhedronBufferGeometry args={[vertices, indices, 1]} />
-      <meshStandardMaterial color="pink" />
+      <polyhedronBufferGeometry args={[vertices, indices, 2]}>
+        <meshStandardMaterial color="pink" />
+      </polyhedronBufferGeometry>
     </mesh>
   );
 };
 
-
-
 const Scene = () => {
-  const activeCategory = useStore(state => state.activeCategory)
+  const activeCategory = useStore(state => state.activeCategory);
 
   return (
-    <Canvas className="full-screen">
+    <Canvas className="full-screen" style={{ width: '100%', height: '100%' }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
 
@@ -151,11 +149,11 @@ const Scene = () => {
       {activeCategory === 'Category 6' && <RotatingPrism />}
       {activeCategory === 'Category 7' && <RotatingCone />}
     </Canvas>
-  )
-}
+  );
+};
 
 const CategorySelector = () => {
-  const setActiveCategory = useStore(state => state.setActiveCategory)
+  const setActiveCategory = useStore(state => state.setActiveCategory);
 
   return (
     <div className="button-bar">
@@ -167,8 +165,8 @@ const CategorySelector = () => {
       <button onClick={() => setActiveCategory('Category 6')}>Prism</button>
       <button onClick={() => setActiveCategory('Category 7')}>Cone</button>
     </div>
-  )
-}
+  );
+};
 
 export default function App() {
   return (
@@ -176,5 +174,5 @@ export default function App() {
       <CategorySelector />
       <Scene />
     </div>
-  )
+  );
 }
