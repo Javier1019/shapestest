@@ -1,6 +1,7 @@
 # React 3D Shapes
 
 This is a React application that allows you to view and interact with various 3D shapes. The application uses the `@react-three/fiber` and `@react-three/drei` libraries to create and render the 3D shapes. You can select different categories of shapes and see them rotating in the canvas.
+Live Demo: [https://javier1019.github.io/shapestest/](https://javier1019.github.io/shapestest/)
 
 ## Getting Started
 
