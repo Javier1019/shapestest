@@ -1,5 +1,3 @@
-Sure! Here's a sample ReadMe.md file for your code:
-
 # React 3D Shapes
 
 This is a React application that allows you to view and interact with various 3D shapes. The application uses the `@react-three/fiber` and `@react-three/drei` libraries to create and render the 3D shapes. You can select different categories of shapes and see them rotating in the canvas.
