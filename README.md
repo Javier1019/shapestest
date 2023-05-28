@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+Sure! Here's a sample ReadMe.md file for your code:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React 3D Shapes
 
-## Available Scripts
+This is a React application that allows you to view and interact with various 3D shapes. The application uses the `@react-three/fiber` and `@react-three/drei` libraries to create and render the 3D shapes. You can select different categories of shapes and see them rotating in the canvas.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+To get started with the project, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```
+   git clone https://github.com/Javier1019/react-3d-shapes.git
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   cd react-3d-shapes
+   ```
 
-### `npm run build`
+3. Install the dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Run the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
+   npm start
+   ```
 
-### `npm run eject`
+   This will start the React development server and open the application in your default browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once the application is running, you can interact with it as follows:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Shape Selection**: Click on the buttons in the category selector to choose a specific shape category. The selected shape will be displayed in the canvas and start rotating.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Rotation**: The selected shape will continuously rotate along the x and y axes.
 
-## Learn More
+## Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application is composed of the following main components:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **RotatingCube**: Renders a rotating cube.
+- **RotatingSphere**: Renders a rotating sphere.
+- **RotatingPyramid**: Renders a rotating pyramid.
+- **RotatingCuboid**: Renders a rotating cuboid.
+- **RotatingCylinder**: Renders a rotating cylinder.
+- **RotatingPrism**: Renders a rotating custom prism shape.
+- **RotatingCone**: Renders a rotating cone.
 
-### Code Splitting
+These components utilize the `useFrame` hook from `@react-three/fiber` to perform the rotation animation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Store
 
-### Analyzing the Bundle Size
+The application uses the `zustand` library to manage the active category state. The active category is stored in the `useStore` hook and can be updated by calling the `setActiveCategory` function.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements
 
-### Deployment
+The application is built using the following libraries:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [React](https://reactjs.org)
+- [react-three/fiber](https://github.com/pmndrs/react-three-fiber)
+- [react-three/drei](https://github.com/pmndrs/drei)
+- [zustand](https://github.com/pmndrs/zustand)
 
-### `npm run build` fails to minify
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Javier Nazario](https://github.com/Javier1019)
