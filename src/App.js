@@ -102,31 +102,38 @@ const RotatingCone = () => {
 
 // Define the RotatingPrism component using low-level APIs.
 const RotatingPrism = () => {
-  const ref = React.useRef()
+  const ref = React.useRef();
   useFrame(() => {
-    ref.current.rotation.x += 0.01
-    ref.current.rotation.y += 0.01
-  })
+    ref.current.rotation.x += 0.01;
+    ref.current.rotation.y += 0.01;
+  });
 
+  // Flatten your vertices and indices into a single array
   const vertices = [
-    [1, 1, -1], [-1, 1, -1], [-1, -1, -1], // bottom
-    [1, 1, 1], [-1, 1, 1], [-1, -1, 1]  // top
-  ]
+    -1, -1, -1,   1, -1, -1,   0,  1, -1,  // Bottom (base)
+    -1, -1, 1,    1, -1, 1,    0,  1, 1   // Top
+  ];
 
   const indices = [
-    [0, 1, 2], // bottom
-    [3, 4, 5], // top
-    [0, 2, 4], [0, 4, 3], // sides
-    [1, 0, 3], [1, 3, 5]  // sides
-  ]
+    0, 1, 2,  // Bottom face
+    3, 4, 5,  // Top face
+    0, 3, 2,  // Sides
+    2, 3, 5,  
+    2, 5, 1,  
+    1, 5, 4,  
+    1, 4, 0,  
+    0, 4, 3   
+  ];
 
   return (
     <mesh ref={ref}>
-      <polyhedronGeometry args={[vertices, indices, 1]} />
-      <meshStandardMaterial color="black" />
+      <polyhedronBufferGeometry args={[vertices, indices, 1]} />
+      <meshStandardMaterial color="pink" />
     </mesh>
-  )
-}
+  );
+};
+
+
 
 const Scene = () => {
   const activeCategory = useStore(state => state.activeCategory)
