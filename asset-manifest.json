@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/shapestest/static/css/main.d166fbca.css",
+    "main.js": "/shapestest/static/js/main.0a638da3.js",
+    "static/js/787.cdfe0cd0.chunk.js": "/shapestest/static/js/787.cdfe0cd0.chunk.js",
+    "index.html": "/shapestest/index.html",
+    "main.d166fbca.css.map": "/shapestest/static/css/main.d166fbca.css.map",
+    "main.0a638da3.js.map": "/shapestest/static/js/main.0a638da3.js.map",
+    "787.cdfe0cd0.chunk.js.map": "/shapestest/static/js/787.cdfe0cd0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d166fbca.css",
+    "static/js/main.0a638da3.js"
+  ]
+}
