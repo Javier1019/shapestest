@@ -4,9 +4,34 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: #121212; /* Dark background for contrast */
 }
 
 .button-bar {
   position: absolute;
   z-index: 1;
+  top: 20px; /* Add some padding from the top */
+  width: 100%;
+  display: flex; 
+  justify-content: space-around; /* Distribute buttons equally across the bar */
+  padding: 1em;
+  background-color: #f8f8f8; /* Light grey color for contrast */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Simple shadow for depth */
+}
+
+.button-bar button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #efefef;
+  color: #333;
+  text-transform: uppercase; /* Transform text to uppercase for stylistic choice */
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px; /* Add some roundness to the buttons */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.button-bar button:hover {
+  background-color: #ddd; /* Change color on hover */
+  cursor: pointer;
 }
